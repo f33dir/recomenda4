@@ -11,7 +11,7 @@ const port = 3003
 const cs = "postgres://postgres:12345@localhost:5432/recommendach";
 const pgClient = new pg.Client(cs);
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 app.use(expressSession({
     secret:"secret1",
@@ -49,6 +49,7 @@ app.get('/',(req, res)=>{
 app.post("/test",(req,res)=>{
 })
 app.post('/register',async (req, res) => {
+    res.header('Access-Control-Allow-Origin',"*");
     let hash = await encryptPass(req.body.pass);
     const values = [req.body.login, hash,req.body.name , 0];
     const query = `INSERT INTO "User"("Login","Password","Name","User_type") VALUES ($1, $2, $3, $4) RETURNING *`;
@@ -62,31 +63,33 @@ app.post('/register',async (req, res) => {
     })
 })
 
-app.post('/login',(req, res)=>{
+app.post('/api/login',(req, res)=>{
     const query = `SELECT * FROM "User" WHERE "Login" = $1`
     const params = [req.body.login];
     pgClient.query(query,params,(err, result)=>{
         if(err){
             console.log(err);
         } else
-            if(result){
+            if(result.rowCount >0 ){
                 comparePass(req.body.pass, result.rows[0].Password).then(r =>{
                     if(r){
                         req.session.id    = result.User_ID;
                         req.session.name  = result.rows[0].Name;
                         req.session.type  = result.rows[0].User_type;
                         req.session.login = true;
-                        res.cookie("test","test")
+                        res.cookie("logged",true)
                         res.status(200);
                         res.send("done")
                     } else{
                         res.status(200);
+                        res.send("done");
                     }
                 }).catch(err =>{
                     console.log(err);
                 })
             } else {
-                console.log(err);
+                res.status(200)
+                res.send("user not found")
             }
     })
 })
