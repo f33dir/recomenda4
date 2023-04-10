@@ -48,7 +48,7 @@ app.get('/',(req, res)=>{
 
 app.post("/test",(req,res)=>{
 })
-app.post('/register',async (req, res) => {
+app.post('/register_deprecated',async (req, res) => {
     res.header('Access-Control-Allow-Origin',"*");
     let hash = await encryptPass(req.body.pass);
     const values = [req.body.login, hash,req.body.name , 0];
@@ -94,6 +94,22 @@ app.post('/api/login',(req, res)=>{
     })
 })
 
+
+app.put('/api/register',async (req, res)=>{
+    let hash = await encryptPass(req.body.password);
+    const params = [req.body.name,req.body.login,hash,0]
+    const query = 'INSERT INTO "User"("Name","Login","Password","User_type") VALUES ($1, $2, $3, $4) RETURNING *'
+    pgClient.query(query,params,(err, result)=>{
+        if(err){
+            console.log(err);
+            res.status(500);
+        } else {
+            console.log(result);
+            res.status(201);
+        }
+        res.send("done");
+    })
+})
 
 
 app.listen(port,()=> {
