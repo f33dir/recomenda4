@@ -7,8 +7,8 @@ const express = require('express')
 const expressSession = require('express-session')
 
 const app = express();
-const port = 3003
-const cs = "postgres://postgres:12345@localhost:5432/recommendach";
+const port = 3003;
+const cs = "postgres://postgres:admin@localhost:5432/recommendach";
 const pgClient = new pg.Client(cs);
 
 app.use(express.json());

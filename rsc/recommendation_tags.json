@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Общежитие", 
+        "value": 1, 
+        "icon": "mdi-home", 
+        "color": "success"
+    },
+    {
+        "title": "Военная кафедра", 
+        "value": 2, 
+        "icon": "mdi-account-tie-hat", 
+        "color": "green"
+    },
+    {
+        "title": "Технический", 
+        "value": 3, 
+        "icon": "mdi-wrench", 
+        "color": "primary"
+    },
+    {
+        "title": "Гуманитарный", 
+        "value": 4, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Медицинский", 
+        "value": 5, 
+        "icon": "mdi-medical-bag", 
+        "color": "red"
+    },
+    {
+        "title": "Военный", 
+        "value": 6, 
+        "icon": "mdi-knife-military", 
+        "color": "green"
+    },
+    {
+        "title": "Экономический", 
+        "value": 7, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Естественные науки", 
+        "value": 8, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    }
+]
