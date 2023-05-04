@@ -129,6 +129,13 @@ app.get('/api/proforientation', async (req, res) => {
     });
 });
 
+app.get('/api/specializations', async (req, res) => {
+    let specializations = require("./rsc/specializations.json");
+
+    res.status(200);
+    res.send(specializations);
+});
+
 app.listen(port,()=> {
     console.log(`Server running on port ${port}`);
 });
