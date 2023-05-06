@@ -94,31 +94,28 @@ app.put('/api/register',async (req, res)=>{
 
 app.post('/api/proforientation', async (req, res) => {
     const questions = req.body.questions;
-    const recommendation_tags = [
-        {title: 'Общежитие', value: 1, icon: 'mdi-home', color: 'success'},
-        {title: 'Военная кафедра', value: 2, icon: 'mdi-account-tie-hat', color: 'green'},
-        {title: 'Технический', value: 3, icon: 'mdi-wrench', color: 'primary'},
-        {title: 'Гуманитарный', value: 4, icon: 'mdi-pen', color: 'orange'},
-        {title: 'Медицинский', value: 5, icon: 'mdi-medical-bag', color: 'red'},
-        {title: 'Военный', value: 6, icon: 'mdi-knife-military', color: 'green'},
-        {title: 'Экономический', value: 7, icon: 'mdi-pen', color: 'orange'},
-        {title: 'Естественные науки', value: 8, icon: 'mdi-pen', color: 'orange'},
-    ];
     var result_tags = [];
 
-    questions.forEach(question => console.log(question.answer));
-    recommendation_tags.forEach(tag => {
-        if(questions.some(question => question.answer.toLowerCase().includes(tag.title.toLowerCase())))
-            result_tags.push(tag);
+    questions.forEach(question => {
+        console.log(question.answer);
+        if(question.answer.value !== undefined)
+            result_tags.push(question.answer.value);
     });
     
-    result_tags.forEach(tag => console.log("tag value:",tag.value));
+    result_tags.forEach(tag => console.log("tag value:",tag));
 
     res.status(201);
     res.send(result_tags);
 });
 
 app.get('/api/proforientation', async (req, res) => {
+    let universities = require("./rsc/universities.json");
+
+    res.status(200);
+    res.send(universities);
+})
+
+app.get('/api/universities', async (req, res) => {
     let tags = require("./rsc/recommendation_tags.json");
     let universities = require("./rsc/universities.json");
 

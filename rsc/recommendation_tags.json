@@ -46,5 +46,101 @@
         "value": 8, 
         "icon": "mdi-pen", 
         "color": "orange"
+    },
+    {
+        "title": "Бакалавриат", 
+        "value": 9, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Специалитет", 
+        "value": 10, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Очная форма", 
+        "value": 11, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Очно-заочная форма", 
+        "value": 12, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Заочная форма", 
+        "value": 13, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Бюджетное обучение", 
+        "value": 14, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Целевое обучение", 
+        "value": 15, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Платное обучение", 
+        "value": 16, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Проектная деятельность", 
+        "value": 17, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Обучение по обмену", 
+        "value": 18, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Внутренние экзамены", 
+        "value": 19, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Программы стажировки", 
+        "value": 20, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Олимпиадные программы", 
+        "value": 21, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Низкий проходной балл (<60)", 
+        "value": 22, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Средний проходной балл (60-75)", 
+        "value": 23, 
+        "icon": "mdi-pen", 
+        "color": "orange"
+    },
+    {
+        "title": "Высокий проходной балл (75+)", 
+        "value": 24, 
+        "icon": "mdi-pen", 
+        "color": "orange"
     }
 ]
